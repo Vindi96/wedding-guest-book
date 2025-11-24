@@ -4,21 +4,22 @@
     <title>Auto-Refreshing Slideshow</title>
     <meta http-equiv="refresh" content="300"> 
     <style>
-        /* Ensures the iframe fills the entire screen */
+        /* Ensures the iframe fills the entire screen, including hiding the footer */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Important: Hides the scrollbar created by the extra height */
         }
         iframe {
             width: 100%;
-            height: 100%;
+            /* **KEY CHANGE:** Adds extra height to push the footer out of view */
+            height: calc(100% + 30px); 
             border: none;
         }
     </style>
 </head>
 <body>
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQvZJpyCxf2FQEntsOSVAHhhrXmKdYnRePXs6F0gck17yKEJYLBDRyE2JwEbwtoZZwnBSQy86x-DUIw/embed?start=true&loop=true&delayms=3000"></iframe>
-    </body>
+</body>
 </html>
